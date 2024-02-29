@@ -1,5 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GiOilPump } from "react-icons/gi";
+import { FaOilWell } from "react-icons/fa6";
+
+import {
+  TbNavigationBolt,
+  TbColorFilter,
+  TbGasStation,
+  TbMatchstick,
+} from "react-icons/tb";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,8 +24,129 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="es" className="scroll-smooth">
+      <body className={"flex gap-2 bg-slate-300" + " " + inter.className}>
+        <aside
+          className={
+            "min-h-screen w-[360px] px-4 bg-slate-300 fixed top-0  border-red-400"
+          }
+        >
+          <div
+            id="logo"
+            className="h-40 w-full  border-red-500 flex justify-center items-center"
+          >
+            <span className="relative text-slate-700 scroll-m-20 text-2xl font-extrabold tracking-tight">
+              <TbColorFilter
+                size={40}
+                style={{ position: "absolute", top: -30, right: -25 }}
+              />
+              Energy<span className="text-green-600">Metrics</span>
+            </span>
+          </div>
+          <div id="links" className="space-y-3 p-4 border-red-500">
+            <a
+              id="active"
+              href="#"
+              className="transition ease-in-out delay-15 hover:-translate-y-1 bg-slate-700 text-white rounded-lg hover:text-slate-700 hover:bg-white flex items-center py-3 px-6 group "
+            >
+              <TbNavigationBolt size={32} />{" "}
+              <span className="pl-3 text-lg antialiased	scroll-m-20 font-semibold tracking-tighter">
+                Primary Energy
+              </span>
+            </a>
+            <a
+              href="#"
+              className="transition ease-in-out delay-15 hover:-translate-y-1 text-slate-600 font-normal hover:font-semibold  rounded-md hover:bg-gray-100 flex items-center py-3 px-6 group "
+            >
+              <TbMatchstick size={32} />
+              <span className="pl-3 text-lg antialiased	scroll-m-20 tracking-tighter">
+                Carbon Dioxide
+              </span>
+            </a>
+            <a
+              href="#"
+              className="transition ease-in-out delay-15 hover:-translate-y-1 text-slate-600 font-normal hover:font-semibold  rounded-md hover:bg-gray-100 flex items-center py-3 px-6 group "
+            >
+              {/* <GiOilPump size={32} style={{}}/> */}
+              <FaOilWell size={32} style={{}}/>
+              <span className="pl-3 text-lg antialiased	scroll-m-20 tracking-tighter">
+                Oil
+              </span>
+            </a>
+            <a
+              href="#"
+              className="transition ease-in-out delay-15 hover:-translate-y-1 text-slate-600 font-normal hover:font-semibold  rounded-md hover:bg-gray-100 flex items-center py-3 px-6 group "
+            >
+              <TbGasStation size={32} />
+              <span className="pl-3 text-lg antialiased	scroll-m-20 tracking-tighter">
+                Gas
+              </span>
+            </a>
+            <a
+              href="#"
+              className="transition ease-in-out delay-15 hover:-translate-y-1 text-slate-600 font-normal hover:font-semibold  rounded-md hover:bg-gray-100 flex items-center py-3 px-6 group "
+            >
+              <TbMatchstick size={32} />
+              <span className="pl-3 text-lg antialiased	scroll-m-20 tracking-tighter">
+                Coal
+              </span>
+            </a>
+            <a
+              href="#"
+              className="transition ease-in-out delay-15 hover:-translate-y-1 text-slate-600 font-normal hover:font-semibold  rounded-md hover:bg-gray-100 flex items-center py-3 px-6 group "
+            >
+              <TbMatchstick size={32} />
+              <span className="pl-3 text-lg antialiased	scroll-m-20 tracking-tighter">
+                Nuclear Energy
+              </span>
+            </a>
+            <a
+              href="#"
+              className="transition ease-in-out delay-15 hover:-translate-y-1 text-slate-600 font-normal hover:font-semibold  rounded-md hover:bg-gray-100 flex items-center py-3 px-6 group "
+            >
+              <TbMatchstick size={32} />
+              <span className="pl-3 text-lg antialiased	scroll-m-20 tracking-tighter">
+                Hidroelectricity
+              </span>
+            </a>
+            <a
+              href="#"
+              className="transition ease-in-out delay-15 hover:-translate-y-1 text-slate-600 font-normal hover:font-semibold  rounded-md hover:bg-gray-100 flex items-center py-3 px-6 group "
+            >
+              <TbMatchstick size={32} />
+              <span className="pl-3 text-lg antialiased	scroll-m-20 tracking-tighter">
+                Renewables
+              </span>
+            </a>
+            <a
+              href="#"
+              className="transition ease-in-out delay-15 hover:-translate-y-1 text-slate-600 font-normal hover:font-semibold  rounded-md hover:bg-gray-100 flex items-center py-3 px-6 group "
+            >
+              <TbMatchstick size={32} />
+              <span className="pl-3 text-lg antialiased	scroll-m-20 tracking-tighter">
+                Electricity Generation
+              </span>
+            </a>
+            <a
+              href="#"
+              className="transition ease-in-out delay-15 hover:-translate-y-1 text-slate-600 font-normal hover:font-semibold  rounded-md hover:bg-gray-100 flex items-center py-3 px-6 group "
+            >
+              <TbMatchstick size={32} />
+              <span className="pl-3 text-lg antialiased	scroll-m-20 tracking-tighter">
+                Key Material
+              </span>
+            </a>
+          </div>
+        </aside>
+        {/* <div className="bg-slate-700 w-[1px]"></div> */}
+        <div
+          className={
+            "h-[2000px] ml-[360px] w-full z-0 shadow-lg bg-gray-200 rounded-tl-3xl pt-3 mt-3  border-blue-400"
+          }
+        >
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
