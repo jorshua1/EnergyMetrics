@@ -1,7 +1,6 @@
 "use client";
 import Select from "react-select";
 import {countryMapping, regionData} from "../utils/optionsData";
-import {RenewableEnergy} from "@/app/utils/optionsRealData";
 import {useState} from "react";
 
 const customStyles = {
@@ -33,15 +32,16 @@ const customStyles = {
     }),
 };
 
-export default function SelectorBar() {
+export default function SelectorBar({datosEstadisticas}:any) {
     const [selectedRegion, setSelectedRegion] = useState(null);
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [countryOptions, setCountryOptions] = useState([]);
     const [isCountryDropdownDisabled, setIsCountryDropdownDisabled] = useState(true);
 
-    const handleOptions = (option: any) => {
+    const handleStatsChange = (option: any) => {
         setSelectedRegion(null);
-        setSelectedCountry(null)
+        setCountryOptions([]);
+        setSelectedCountry(null);
     }
     const handleRegionChange = (option: any) => {
         setSelectedRegion(option);
@@ -49,6 +49,7 @@ export default function SelectorBar() {
         if (option.value === 'all') {
             setSelectedCountry(null);
         } else {
+            setSelectedCountry(null);
             // @ts-ignore
             setCountryOptions(countryMapping[option.value]);
         }
@@ -62,12 +63,12 @@ export default function SelectorBar() {
           Select Stats
         </span>
                 <Select
-                    options={RenewableEnergy}
+                    options={datosEstadisticas}
                     unstyled
                     styles={customStyles}
-                    defaultValue={RenewableEnergy[0]}
-                    onChange={handleOptions}
-                    instanceId={RenewableEnergy[0].value}
+                    defaultValue={datosEstadisticas[0]}
+                    onChange={handleStatsChange}
+                    instanceId={datosEstadisticas[0].value}
                 />
             </div>
             <div className="w-1/3 h-full flex flex-col justify-center border-r-[1px] border-slate-200">

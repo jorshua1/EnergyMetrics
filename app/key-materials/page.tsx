@@ -1,5 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
+import SelectorBar from '../components/SelectorBar';
+import { HydroElectricity } from "../utils/optionsRealData";
 
 export const metadata: Metadata = {
   title: "key-materials",
@@ -9,7 +11,7 @@ export const metadata: Metadata = {
 export default function KeyMaterialsPage() {
   return (
     <div>
-      <h1 className="text-2xl">Key materials</h1>
+      <SelectorBar datosEstadisticas={HydroElectricity}></SelectorBar>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
+import SelectorBar from '../components/SelectorBar';
+import { Coal } from '../utils/optionsRealData';
 
 export const metadata: Metadata={
     title:"Coal",
@@ -9,7 +11,7 @@ export const metadata: Metadata={
 export default function CoalPage() {
   return (
     <div>
-        <h1 className='text-2xl'>Coal page</h1>
+        <SelectorBar datosEstadisticas={Coal}></SelectorBar>
     </div>
   )
 }

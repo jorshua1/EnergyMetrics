@@ -1,5 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
+import {RenewableEnergy} from "@/app/utils/optionsRealData";
+import SelectorBar from '../components/SelectorBar';
 
 export const metadata: Metadata={
     title:"Renewable energy",
@@ -9,7 +11,7 @@ export const metadata: Metadata={
 export default function RenewablePage() {
   return (
     <div>
-        <h1 className='text-2xl'>Renewable page</h1>
+        <SelectorBar datosEstadisticas={RenewableEnergy}></SelectorBar>
     </div>
   )
 }

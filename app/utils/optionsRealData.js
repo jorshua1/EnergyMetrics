@@ -35,7 +35,7 @@ export const Nuclear = [{
     value: "", label: "", query: ""
 }]
 export const HydroElectricity = [{
-    value: "", label: "", query: ""
+    value: "1", label: "Hola mi amor", query: ""
 }]
 export const ElectricityGeneration = [{
     value: "EG-1", label: "Electricity generation - TWh (from 1985)", query: ""
