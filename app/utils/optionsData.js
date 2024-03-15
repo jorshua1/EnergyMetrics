@@ -2,6 +2,17 @@ export const regionData = [
     {
         value: "all",
         label: "All Regions",
+        query: [
+            "TotalAsiaPacific",
+            "TotalNorthAmerica",
+            "TotalCIS",
+            "TotalMiddleEast",
+            "TotalEurope",
+            "TotalAfrica",
+            "TotalEU",
+            "TotalS.&Cent.America",
+            "TotalWorld"
+        ]
     }, {
         value: "northAmerica",
         label: "North America",
@@ -66,9 +77,9 @@ export const countryMapping = {
         }
     ],
     "northAmerica": [
-        {value: 'unitedStates', label: 'United States'},
-        {value: 'canada', label: 'Canada'},
-        {value: 'mexico', label: 'Mexico'},
+        { value: 'unitedStates', label: 'United States' },
+        { value: 'canada', label: 'Canada' },
+        { value: 'mexico', label: 'Mexico' },
         // Agrega más países de Norteamérica aquí
     ],
 };

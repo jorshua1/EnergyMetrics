@@ -7,7 +7,7 @@ export async function GET(request: any) {
         await dbConnect();
         const collection = connection.db.collection('power');
 
-        const Region = await collection.aggregate([
+        const result = await collection.aggregate([
             {
                 '$group': {
                     '_id': null,
@@ -18,7 +18,9 @@ export async function GET(request: any) {
             }
         ]).toArray();
 
-        return NextResponse.json({ Region });
+        const regiones = result[0]?.Region || []; // Accede directamente al array de regiones
+
+        return NextResponse.json({ regiones });
     } catch (error: any) {
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
