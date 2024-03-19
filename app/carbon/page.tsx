@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import SelectorBar from "../components/SelectorBar";
 import { Carbon } from "../utils/optionsRealData";
 import Chart from "@/app/components/Chart";
-import RegionesComponent from "../components/visor";
 
 export const metadata: Metadata = {
   title: "Carbon Dioxide",
@@ -11,10 +10,10 @@ export const metadata: Metadata = {
 
 export default function CarbonPage() {
   return (
-    <div>
+    <div className="w-full min-h-screen">
       <SelectorBar datosEstadisticas={Carbon}></SelectorBar>
-      <div className="m-4">
-      <Chart></Chart>
+        <div className="w-full mt-5 flex flex-col justify-items-center items-center">
+        <Chart></Chart>
       </div>
     </div>
   );

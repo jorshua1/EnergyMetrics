@@ -1,5 +1,7 @@
-import React from 'react'
-import { Metadata } from 'next'
+import { Metadata } from "next";
+import SelectorBar from "../components/SelectorBar";
+import { Gas } from "../utils/optionsRealData";
+import Chart from "@/app/components/Chart";
 
 export const metadata: Metadata={
     title:"Gas",
@@ -8,8 +10,11 @@ export const metadata: Metadata={
 
 export default function GasPage() {
   return (
-    <div>
-        <h1 className='text-2xl'>Gas page</h1>
+    <div className="w-full min-h-screen">
+    <SelectorBar datosEstadisticas={Gas}></SelectorBar>
+      <div className="w-full mt-5 flex flex-col justify-items-center items-center">
+      <Chart></Chart>
     </div>
+  </div>
   )
 }

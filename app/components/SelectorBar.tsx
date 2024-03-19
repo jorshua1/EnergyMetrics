@@ -45,6 +45,7 @@ export default function SelectorBar({datosEstadisticas}:any) {
     }
     const handleRegionChange = (option: any) => {
         setSelectedRegion(option);
+        console.log(option.query)
         setIsCountryDropdownDisabled(option.value === 'all');
         if (option.value === 'all') {
             setSelectedCountry(null);

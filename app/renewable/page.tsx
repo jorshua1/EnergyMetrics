@@ -1,7 +1,8 @@
-import React from 'react'
-import { Metadata } from 'next'
-import {RenewableEnergy} from "@/app/utils/optionsRealData";
-import SelectorBar from '../components/SelectorBar';
+import React from "react";
+import { Metadata } from "next";
+import SelectorBar from "../components/SelectorBar";
+import { RenewableEnergy } from "../utils/optionsRealData";
+import Chart from "@/app/components/Chart";
 
 export const metadata: Metadata={
     title:"Renewable energy",
@@ -10,8 +11,11 @@ export const metadata: Metadata={
 
 export default function RenewablePage() {
   return (
-    <div>
-        <SelectorBar datosEstadisticas={RenewableEnergy}></SelectorBar>
+    <div className="w-full min-h-screen">
+      <SelectorBar datosEstadisticas={RenewableEnergy}></SelectorBar>
+      <div className="w-full mt-5 flex flex-col justify-items-center items-center">
+        <Chart></Chart>
+      </div>
     </div>
   )
 }

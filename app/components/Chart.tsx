@@ -64,6 +64,9 @@ const Chart = () => {
       2: "#22c55e",
       3: "#f97316",
       4: "#d946ef",
+      5: "#0891b2",
+      6: "#6d28d9",
+      7: "#fbbf24"
     };
     return colors[index] || "#000000"; // Color por defecto en caso de que el país no esté en el objeto colors
   }
@@ -72,7 +75,7 @@ const Chart = () => {
     console.log("Entrando a la consulta");
     async function fetchData() {
       const response = await fetch(
-        `/api/stats?value={"Country":{"$in":["Colombia","Brazil","Canada", "Spain", "Argentina"]},"Var":"gascons_ej"}`
+        `/api/stats?value={"Country":{"$in":["Colombia","Brazil","Canada", "Spain", "Argentina", "Japan"]},"Var":"gascons_ej"}`
       );
       const data: { datos: DatoAPI[] } = await response.json();
       setDatos(data.datos);
@@ -111,8 +114,13 @@ const Chart = () => {
     }
   }, [datos]);
   return (
-    <div>
-      <Line data={data} options={options} />
+    <div className="w-11/12 h-full flex flex-col">
+      <span className="text-2xl font-bold tracking-tighter text-slate-600 py-5">
+        Production in exajouls
+      </span>
+      <div>
+        <Line data={data} options={options} />
+      </div>
     </div>
   );
 };
