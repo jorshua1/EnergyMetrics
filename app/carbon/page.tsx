@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import SelectorBar from "../components/SelectorBar";
 import { Carbon } from "../utils/optionsRealData";
 import Chart from "@/app/components/Chart";
+import Wraper from '../components/Wraper';
 
 export const metadata: Metadata = {
   title: "Carbon Dioxide",
@@ -11,10 +12,7 @@ export const metadata: Metadata = {
 export default function CarbonPage() {
   return (
     <div className="w-full min-h-screen">
-      <SelectorBar datosEstadisticas={Carbon}></SelectorBar>
-        <div className="w-full mt-5 flex flex-col justify-items-center items-center">
-        <Chart></Chart>
-      </div>
+      <Wraper datos={Carbon}></Wraper>
     </div>
   );
 }

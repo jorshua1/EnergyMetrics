@@ -145,7 +145,7 @@ export const Gas = [
   {
     value: "gas-1",
     label: "Gas: Proved reserves",
-    query: "",
+    query: "primary_ej",
   },
   {
     value: "gas-2",
@@ -278,7 +278,7 @@ export const ElectricityGeneration = [
   {
     value: "EG-1",
     label: "Electricity generation - TWh (from 1985)",
-    query: "",
+    query: "elect_twh",
   },
   {
     value: "EG-2",
@@ -310,22 +310,22 @@ export const KeyMaterial = [
   {
     value: "keyMaterial-1",
     label: "Key materials - Cobalt Production - Reserves (from 1995)",
-    query: "",
+    query: "cobalt_kt",
   },
   {
     value: "keyMaterial-2",
     label: "Key materials - Lithium Production - Reserves (from 1995)",
-    query: "",
+    query: "lithium_kt",
   },
   {
     value: "keyMaterial-3",
     label: "Key materials - Graphite Production - Reserves (from 1995)",
-    query: "",
+    query: "graphite_kt",
   },
   {
     value: "keyMaterial-4",
     label: "Key materials - Rare Earth Production - Reserves (from 1995)",
-    query: "",
+    query: "rareearths_kt",
   },
   {
     value: "keyMaterial-5",
