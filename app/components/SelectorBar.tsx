@@ -58,6 +58,7 @@ export default function SelectorBar({ datosEstadisticas }: any) {
       setSelectedRegionOption(option);
     } else {
       setSelectedCountry(null);
+      setSelectedRegionOption(option);
       // @ts-ignore
       setCountryOptions(countryMapping[option.value]);
     }
@@ -75,6 +76,7 @@ export default function SelectorBar({ datosEstadisticas }: any) {
           styles={customStyles}
           onChange={handleStatsChange}
           instanceId={datosEstadisticas[0].value}
+          isSearchable={false}
         />
       </div>
       <div className="w-1/3 h-full flex flex-col justify-center border-r-[1px] border-slate-200">
@@ -85,9 +87,9 @@ export default function SelectorBar({ datosEstadisticas }: any) {
           unstyled
           styles={customStyles}
           options={regionData}
-          value={selectedRegion}
           onChange={handleRegionChange}
           instanceId={regionData[0].value}
+          isSearchable={false}
           //defaultInputValue={regionData[0].value}
         />
       </div>
@@ -104,6 +106,7 @@ export default function SelectorBar({ datosEstadisticas }: any) {
           options={countryOptions}
           placeholder="Select Country"
           instanceId={regionData[0].value}
+          isSearchable={false}
         />
       </div>
     </div>

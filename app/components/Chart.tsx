@@ -13,6 +13,8 @@ import {
 } from "chart.js";
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "./Wraper";
+import html2canvas from "html2canvas";
+import { TbBookDownload, TbDownload } from "react-icons/tb";
 
 interface DatoAPI {
   _id: string;
@@ -44,7 +46,6 @@ const Chart = () => {
     }[]
   >([]);
   const { selectedOption, selectedRegionOption } = useContext(AppContext);
-
   const data = {
     labels: labels,
     datasets: datasets.map((dataset, index) => ({
@@ -52,7 +53,8 @@ const Chart = () => {
       tension: 0.2,
       fill: true,
       borderColor: getCountryColor(index), // Función para obtener el color del borde según el país
-      pointRadius: 5,
+      pointRadius: 1,
+      pointHoverRadius: 8,
       pointBorderColor: getCountryColor(index), // Función para obtener el color del borde de los puntos según el país
       pointBackgroundColor: getCountryColor(index), // Función para obtener el color de fondo de los puntos según el país
     })),
@@ -69,9 +71,41 @@ const Chart = () => {
       5: "#0891b2",
       6: "#6d28d9",
       7: "#fbbf24",
+      8: "#34d399", // verde
+      9: "#60a5fa", // azul claro
+      10: "#f9a8d4", // rosa
+      11: "#fde68a", // amarillo
+      12: "#a78bfa", // morado
+      13: "#fca5a5", // rojo claro
+      14: "#6ee7b7", // verde claro
+      15: "#93c5fd", // azul cielo
+      16: "#794044", // marrón
+      17: "#6a0573", // púrpura oscuro
+      18: "#b6ba18", // verde oliva
+      19: "#4b5d16", // verde bosque
+      20: "#4b5dce", // azul real
+      21: "#7e1a1a", // granate
+      22: "#2f4f4f", // gris oscuro pizarra
+      23: "#ff4500", // naranja rojo
+      24: "#2e8b57", // verde mar
+      25: "#adff2f", // verde amarillo
     };
     return colors[index] || "#000000"; // Color por defecto en caso de que el país no esté en el objeto colors
   }
+
+  const downloadImage = () => {
+    const input = document.getElementById("chartToDownload");
+    html2canvas(input!).then((canvas) => {
+      // Use optional chaining to ensure input is not null
+      const imgData = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.href = imgData;
+      link.download = `${
+        selectedOption !== null ? selectedOption.label : "Grafica sin datos"
+      }`;
+      link.click();
+    });
+  };
 
   useEffect(() => {
     console.log("Entrando a la consulta");
@@ -146,12 +180,17 @@ const Chart = () => {
     }
   }, [datos]);
   return (
-    <div className="w-11/12 h-full flex flex-col">
-      <span className="text-2xl font-bold tracking-tighter text-slate-600 py-5">
-        {selectedOption !== null
-          ? selectedOption.label
-          : "Seleccione una de las estadisticas a visualizar"}
-      </span>
+    <div className="w-11/12 px-5 h-full flex flex-col" id="chartToDownload">
+      <div className="flex justify-between">
+        <span className="text-2xl font-bold tracking-tighter text-slate-600 py-5">
+          {selectedOption !== null
+            ? selectedOption.label
+            : "Seleccione una de las estadisticas a visualizar"}
+        </span>
+        <button onClick={downloadImage}>
+          <TbDownload size={"24px"} className="text-slate-700"/>
+        </button>
+      </div>
       <div>
         <Line data={data} options={options} />
       </div>

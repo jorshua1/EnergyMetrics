@@ -5,8 +5,8 @@ import { primaryEnergy } from "../utils/optionsRealData";
 import Chart from "@/app/components/Chart";
 
 interface ContextType {
-  selectedOption: any; // Cambia 'any' por el tipo adecuado
-  setSelectedOption: React.Dispatch<React.SetStateAction<any>>; // Cambia 'any' por el tipo adecuado
+  selectedOption: any; 
+  setSelectedOption: React.Dispatch<React.SetStateAction<any>>; 
   selectedRegionOption: any;
   setSelectedRegionOption: any;
 }

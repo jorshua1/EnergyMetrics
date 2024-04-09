@@ -9,6 +9,7 @@ import {
   TbRadioactiveFilled,
   TbPackages,
   TbWindElectricity,
+  TbAppsFilled,
 } from "react-icons/tb";
 import { SidebarMenuItem } from "./SidebarMenuItem";
 
@@ -62,6 +63,11 @@ const menuItems = [
     path: "/key-materials",
     icon: <TbPackages size={32} />,
     title: "Key Materials",
+  },
+  {
+    path: "/multi-graph",
+    icon: <TbAppsFilled  size={32} />,
+    title: "Multi Graph",
   },
 ];
 

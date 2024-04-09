@@ -48,230 +48,230 @@ export const Oil = [
   {
     value: "Oil-1",
     label: "Oil: Proved reserves",
-    query: "",
+    query: "-",
   },
   {
     value: "Oil-2",
     label: "Oil: Proved reserves - Barrels (from 1980)",
-    query: "",
+    query: "-",
   },
   {
     value: "Oil-3",
     label: "Oil: Production - Barrels (from 1965)",
-    query: "",
+    query: "oilprod_kbd",
   },
   {
     value: "Oil-4",
     label: "Oil: Production - Tonnes (from 1965)",
-    query: "",
+    query: "oilprod_mt",
   },
   {
     value: "Oil-5",
     label: "Oil: Crude oil and condensate production - Barrels (from 2000)",
-    query: "",
+    query: "oilprod_crudecond_kbd",
   },
   {
     value: "Oil-6",
     label: "Oil: Natural Gas Liquids production - Barrels (from 2000)",
-    query: "",
+    query: "oilprod_ngl_kbd",
   },
   {
     value: "Oil-7",
     label: "Oil: Total liquids consumption - Barrels (from 1965)",
-    query: "",
+    query: "liqcons_kbd",
   },
   {
     value: "Oil-8",
     label: "Oil: Consumption - Barrels (from 1965)",
-    query: "",
+    query: "oilcons_kbd",
   },
   {
     value: "Oil-9",
     label: "Oil: Consumption - Tonnes (from 1965)",
-    query: "",
+    query: "oilcons_mt",
   },
   {
     value: "Oil-10",
     label: "Oil: Consumption - Exajoules (from 1965)",
-    query: "",
+    query: "oilcons_ej",
   },
   {
     value: "Oil-11",
     label: "Oil: Regional consumption - by product - Barrels (from 1965)",
-    query: "",
+    query: "-",
   },
   {
     value: "Oil-12",
     label: "Oil: Spot crude prices ",
-    query: "",
+    query: "-",
   },
   {
     value: "Oil-13",
     label: "Oil: Crude prices since 1861",
-    query: "",
+    query: "-",
   },
   {
     value: "Oil-14",
     label: "Oil: Refinery throughput (from 1980)",
-    query: "",
+    query: "refthru_kbd",
   },
   {
     value: "Oil-15",
     label: "Oil: Refining capacity (from 1965)",
-    query: "",
+    query: "refcap_kbd",
   },
   {
     value: "Oil-16",
     label: "Oil: Regional refining margins (from 2000)",
-    query: "",
+    query: "-",
   },
   {
     value: "Oil-17",
     label: "Oil: Trade movements (from 1980)",
-    query: "",
+    query: "-",
   },
   {
     value: "Oil-18",
     label: "Oil: Inter-area movements ",
-    query: "",
+    query: "-",
   },
   {
     value: "Oil-19",
     label: "Oil: Trade 2020 - 2021",
-    query: "",
+    query: "-",
   },
 ];
 export const Gas = [
   {
     value: "gas-1",
     label: "Gas: Proved reserves",
-    query: "primary_ej",
+    query: "-",
   },
   {
     value: "gas-2",
     label: "Gas: Proved reserves - Bcm (from 1980)",
-    query: "",
+    query: "-",
   },
   {
     value: "gas-3",
     label: "Gas: Production - Bcm (from 1970)",
-    query: "",
+    query: "gasprod_bcm",
   },
   {
     value: "gas-4",
     label: "Gas: Production - Bcf (from 1970)",
-    query: "",
+    query: "gasprod_bcfd",
   },
   {
     value: "gas-5",
     label: "Gas: Production - Exajoules (from 1970)",
-    query: "",
+    query: "gasprod_ej",
   },
   {
     value: "gas-6",
     label: "Gas: Consumption - Bcm (from 1965)",
-    query: "",
+    query: "gascons_bcm",
   },
   {
     value: "gas-7",
     label: "Gas: Consumption - Bcf (from 1965)",
-    query: "",
+    query: "gascons_bcfd",
   },
   {
     value: "gas-8",
     label: "Gas: Consumption - Exajoules (from 1965)",
-    query: "",
+    query: "gascons_ej",
   },
   {
     value: "gas-9",
     label: "Gas: Prices ",
-    query: "",
+    query: "-",
   },
   {
     value: "gas-10",
     label: "Gas: Inter-regional trade",
-    query: "",
+    query: "-",
   },
   {
     value: "gas-11",
     label: "Gas: LNG imports",
-    query: "",
+    query: "-",
   },
   {
     value: "gas-12",
     label: "Gas: LNG exports",
-    query: "",
+    query: "-",
   },
   {
     value: "gas-13",
     label: "Gas: Trade movements LNG",
-    query: "",
+    query: "-",
   },
   {
     value: "gas-14",
     label: "Gas: Trade movements pipeline",
-    query: "",
+    query: "-",
   },
 ];
 export const Coal = [
   {
     value: "coal-1",
     label: "Coal: Reserves",
-    query: "",
+    query: "-",
   },
   {
     value: "coal-2",
     label: "Coal: Production - Tonnes (from 1981)",
-    query: "",
+    query: "coalprod_mt",
   },
   {
     value: "coal-3",
     label: "Coal: Production - Exajoules (from 1981)",
-    query: "",
+    query: "coalprod_ej",
   },
   {
     value: "coal-4",
     label: "Coal: Consumption - Exajoules (from 1965)",
-    query: "",
+    query: "coalcons_ej",
   },
   {
     value: "coal-5",
     label: "Coal: Prices",
-    query: "",
+    query: "-",
   },
   {
     value: "coal-6",
     label: "Coal: Trade movements",
-    query: "",
+    query: "-",
   },
   {
     value: "coal-7",
     label: "Coal: Inter-area movements",
-    query: "",
+    query: "-",
   },
 ];
 export const Nuclear = [
   {
     value: "nuclear-1",
     label: "Nuclear Energy - Generation - TWh (from 1965)",
-    query: "",
+    query: "electbyfuel_nuclear",
   },
   {
     value: "nuclear-2",
     label: "Nuclear Energy - Consumption - Exajoules (from 1965)",
-    query: "",
+    query: "nuclear_ej",
   },
 ];
 export const HydroElectricity = [
   {
     value: "hydro-1",
     label: "Hydroelectricity - Generation - TWh (from 1965)",
-    query: "",
+    query: "electbyfuel_hydro",
   },
   {
     value: "hydro-2",
     label: "Hydroelectricity - Consumption - Exajoules (from 1965)",
-    query: "",
+    query: "hydro_ej",
   },
 ];
 export const ElectricityGeneration = [
@@ -283,27 +283,27 @@ export const ElectricityGeneration = [
   {
     value: "EG-2",
     label: "Electricity generation by fuel - TWh (2020 - 2021)",
-    query: "",
+    query: "-",
   },
   {
     value: "EG-3",
     label: "Electricity generation from oil -TWh (from 1985)",
-    query: "",
+    query: "electbyfuel_oil",
   },
   {
     value: "EG-4",
     label: "Electricity generation from gas - TWh (from 1985)",
-    query: "",
+    query: "electbyfuel_gas",
   },
   {
     value: "EG-5",
     label: "Electricity generation from coal - TWh (from 1985)",
-    query: "",
+    query: "electbyfuel_coal",
   },
   {
     value: "EG-6",
     label: "Electricity generation from other - TWh (from 1985)",
-    query: "",
+    query: "electbyfuel_other",
   },
 ];
 export const KeyMaterial = [
@@ -330,89 +330,79 @@ export const KeyMaterial = [
   {
     value: "keyMaterial-5",
     label: "Key materials - Cobalt and Lithium prices",
-    query: "",
+    query: "-",
   },
 ];
 export const RenewableEnergy = [
   {
     value: "renew-1",
-    label: "Renewable Energy - Wind  (Installed capacity)",
-    query: "",
+    label: "Renewables - Consumption - Exajoules (from 1965)",
+    query: "renewables_ej",
   },
   {
     value: "renew-2",
-    label: "Renewable Energy - Solar  (Installed capacity)",
-    query: "",
+    label: "Renewables - Renewable Power - Exajoules (from 1965)",
+    query: "ren_power_ej",
   },
   {
     value: "renew-3",
-    label: "Renewables - Consumption - Exajoules (from 1965)",
-    query: "",
+    label: "Renewables - Renewable Power - TWh (from 1965)",
+    query: "electbyfuel_ren_power",
   },
   {
     value: "renew-4",
-    label: "Renewables - Renewable Power - Exajoules (from 1965)",
-    query: "",
+    label: "Renewables - Generation by source - TWh",
+    query: "-",
   },
   {
     value: "renew-5",
-    label: "Renewables - Renewable Power - TWh (from 1965)",
-    query: "",
+    label: "Renewables - Solar generation - TWh (from 1965)",
+    query: "solar_twh",
   },
   {
     value: "renew-6",
-    label: "Renewables - Generation by source - TWh",
-    query: "",
+    label: "Renewables - Solar consumption - Exajoules (from 1965)",
+    query: "solar_ej",
   },
   {
     value: "renew-7",
-    label: "Renewables - Solar generation - TWh (from 1965)",
-    query: "",
+    label: "Renewables - Wind generation - TWh (from 1965)",
+    query: "wind_twh",
   },
   {
     value: "renew-8",
-    label: "Renewables - Solar consumption - Exajoules (from 1965)",
-    query: "",
+    label: "Renewables - Wind consumption - Exajoules (from 1965)",
+    query: "wind_ej",
   },
   {
     value: "renew-9",
-    label: "Renewables - Wind generation - TWh (from 1965)",
-    query: "",
+    label:
+      "Renewables - Geothermal, Biomass and Other generation - TWh  (from 1965)",
+    query: "biogeo_twh",
   },
   {
     value: "renew-10",
-    label: "Renewables - Wind consumption - Exajoules (from 1965)",
-    query: "",
+    label: "Renewables - Geothermal, Biomass and Other - Exajoules (from 1965)",
+    query: "biogeo_ej",
   },
   {
     value: "renew-11",
-    label:
-      "Renewables - Geothermal, Biomass and Other generation - TWh  (from 1965)",
-    query: "",
+    label: "Renewables - Biofuels production - Kboe/d (from 1990)",
+    query: "biofuels_prod_kboed",
   },
   {
     value: "renew-12",
-    label: "Renewables - Geothermal, Biomass and Other - Exajoules (from 1965)",
-    query: "",
+    label: "Renewables - Biofuels production - Petajoules (from 1990)",
+    query: "biofuels_prod_pj",
   },
   {
     value: "renew-13",
-    label: "Renewables - Biofuels production - Kboe/d (from 1990)",
-    query: "",
+    label: "Renewables - Biofuels consumption - Kboe/d (from 1990)",
+    query: "biofuels_cons_kboed",
   },
   {
     value: "renew-14",
-    label: "Renewables - Biofuels production - Petajoules (from 1990)",
-    query: "",
-  },
-  {
-    value: "renew-15",
-    label: "Renewables - Biofuels consumption - Kboe/d (from 1990)",
-    query: "",
-  },
-  {
-    value: "renew-16",
     label: "Renewables - Biofuels consumption - Petajoules (from 1990)",
-    query: "",
+    query: "biofuels_cons_pj",
   },
 ];
