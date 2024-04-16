@@ -66,7 +66,7 @@ export default function SelectorBar({ datosEstadisticas }: any) {
 
   return (
     <div className="h-[180px] z-50 relative rounded-tl-2xl flex border-b-2 border-slate-200">
-      <div className="w-1/3 h-full flex flex-col justify-center border-r-[1px] border-slate-200">
+      <div className="w-1/2 h-full flex flex-col justify-center border-r-[1px] border-slate-200">
         <span className="py-3 px-10 tracking-tighter text-lg text-slate-500">
           Select Stats
         </span>
@@ -79,7 +79,7 @@ export default function SelectorBar({ datosEstadisticas }: any) {
           isSearchable={false}
         />
       </div>
-      <div className="w-1/3 h-full flex flex-col justify-center border-r-[1px] border-slate-200">
+      <div className="w-1/2 h-full flex flex-col justify-center border-r-[1px] border-slate-200">
         <span className="py-3 px-10 tracking-tighter text-lg text-slate-500">
           Select Region
         </span>
@@ -93,7 +93,7 @@ export default function SelectorBar({ datosEstadisticas }: any) {
           //defaultInputValue={regionData[0].value}
         />
       </div>
-      <div className="w-1/3 h-full flex flex-col justify-center border-r-[1px] border-slate-200">
+      {/* <div className="w-1/3 h-full flex flex-col justify-center border-r-[1px] border-slate-200">
         <span className="py-3 px-10 tracking-tighter text-lg text-slate-500">
           Select Country
         </span>
@@ -108,7 +108,7 @@ export default function SelectorBar({ datosEstadisticas }: any) {
           instanceId={regionData[0].value}
           isSearchable={false}
         />
-      </div>
+      </div> */}
     </div>
   );
 }
