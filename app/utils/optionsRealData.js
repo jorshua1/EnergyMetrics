@@ -406,3 +406,4 @@ export const RenewableEnergy = [
     query: "biofuels_cons_pj",
   },
 ];
+

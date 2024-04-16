@@ -1,7 +1,6 @@
 "use client";
 import SelectorBar from "../components/SelectorBar";
 import React, { createContext, useState } from "react";
-import { primaryEnergy } from "../utils/optionsRealData";
 import Chart from "@/app/components/Chart";
 
 interface ContextType {

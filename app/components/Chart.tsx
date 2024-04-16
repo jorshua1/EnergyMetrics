@@ -14,7 +14,8 @@ import {
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "./Wraper";
 import html2canvas from "html2canvas";
-import { TbBookDownload, TbDownload } from "react-icons/tb";
+import { TbDownload } from "react-icons/tb";
+import React from "react";
 
 interface DatoAPI {
   _id: string;
@@ -187,8 +188,12 @@ const Chart = () => {
             ? selectedOption.label
             : "Seleccione una de las estadisticas a visualizar"}
         </span>
-        <button onClick={downloadImage}>
-          <TbDownload size={"24px"} className="text-slate-700"/>
+        {}
+        <button
+          onClick={downloadImage}
+          // className={pathName === "/multi-graph" ? "hidden" : "block"}
+        >
+          <TbDownload size={"24px"} className="text-slate-700" />
         </button>
       </div>
       <div>
