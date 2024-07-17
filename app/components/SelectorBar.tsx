@@ -31,6 +31,15 @@ const customStyles = {
       cursor: "pointer",
     },
   }),
+  groupHeading: (provided: any, state: any) => ({
+    ...provided,
+    background: "#334155",
+    padding: "15px 25px",
+    color: "white",
+    fontSize: "20px",
+    fontWeight: "light",
+    letterSpacing: "-0.05em",
+  }),
 };
 
 export default function SelectorBar({ datosEstadisticas }: any) {
@@ -51,7 +60,7 @@ export default function SelectorBar({ datosEstadisticas }: any) {
   };
   const handleRegionChange = (option: any) => {
     setSelectedRegion(option.query);
-    console.log(`consulta selector: ${option.query}`);
+    console.log(`consulta selector region: ${option.query}`);
     setIsCountryDropdownDisabled(option.value === "all");
     if (option.value === "all") {
       setSelectedCountry(null);

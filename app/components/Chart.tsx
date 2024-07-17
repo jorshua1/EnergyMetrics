@@ -110,19 +110,15 @@ const Chart = () => {
 
   useEffect(() => {
     console.log("Entrando a la consulta");
-
+    console.log(selectedRegionOption);
     async function fetchData() {
       if (selectedOption !== null && selectedRegionOption !== null) {
         const regionOptionStrings = selectedRegionOption.query.map(
           (option: any) => encodeURIComponent(option)
         );
         console.log(selectedOption.query);
-        console.log(`consulta chart: ${typeof selectedRegionOption}`);
         console.log(
           `/api/stats?value={"Country":{"$in":[${regionOptionStrings}]},"Var":"${selectedOption.query}"}`
-        );
-        console.log(
-          `/api/stats?value={"Country":{"$in":["Colombia"]},"Var":"${selectedOption.query}"}`
         );
         const response = await fetch(
           `/api/stats?value=${JSON.stringify({
@@ -177,7 +173,7 @@ const Chart = () => {
 
       setLabels(preparedLabels);
       setDatasets(preparedDatasets);
-      console.log(datasets);
+      console.log(`datasets:${datasets}`);
     }
   }, [datos]);
   return (
@@ -188,10 +184,13 @@ const Chart = () => {
             ? selectedOption.label
             : "Seleccione una de las estadisticas a visualizar"}
         </span>
-        {}
         <button
           onClick={downloadImage}
-          // className={pathName === "/multi-graph" ? "hidden" : "block"}
+          className={
+            selectedRegionOption === null || selectedOption === null
+              ? "hidden"
+              : "block"
+          }
         >
           <TbDownload size={"24px"} className="text-slate-700" />
         </button>
