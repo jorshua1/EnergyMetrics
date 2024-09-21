@@ -17,7 +17,7 @@ const menuItems = [
   {
     path: "/primary",
     icon: <TbNavigationBolt size={32} />,
-    title: "Primary Energy",
+    title: "RUGELES Energy",
   },
   {
     path: "/carbon",
