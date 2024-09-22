@@ -97,13 +97,28 @@ const Chart = () => {
   const downloadImage = () => {
     const input = document.getElementById("chartToDownload");
     html2canvas(input!).then((canvas) => {
+      const ctx = canvas.getContext("2d");
+      if (ctx) {
+        // Set watermark text properties
+        ctx.font = "50px Arial";
+        ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+
+        // Position the watermark text
+        const text = "Energy Metrics - Guillermo Orozco";
+        const x = 870;
+        const y = 220;
+
+        // Draw the watermark text
+        ctx.fillText(text, x, y);
+      }
       // Use optional chaining to ensure input is not null
-      const imgData = canvas.toDataURL("image/png");
+      const imgData = canvas.toDataURL("image/jpeg");
       const link = document.createElement("a");
       link.href = imgData;
-      link.download = `${
-        selectedOption !== null ? selectedOption.label : "Grafica sin datos"
-      }`;
+      link.download = `${selectedOption !== null ? selectedOption.label : "Grafica sin datos"
+        }.jpg`;
       link.click();
     });
   };
@@ -177,7 +192,7 @@ const Chart = () => {
     }
   }, [datos]);
   return (
-    <div className="w-11/12 px-5 h-full flex flex-col" id="chartToDownload">
+    <div className="w-11/12 px-5 h-full flex flex-col" >
       <div className="flex justify-between">
         <span className="text-2xl font-bold tracking-tighter text-slate-600 py-5">
           {selectedOption !== null
@@ -195,7 +210,7 @@ const Chart = () => {
           <TbDownload size={"24px"} className="text-slate-700" />
         </button>
       </div>
-      <div>
+      <div id="chartToDownload">
         <Line data={data} options={options} />
       </div>
     </div>
