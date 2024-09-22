@@ -37,6 +37,41 @@ ChartJS.register(
 
 const options = {};
 const colors:any=[]
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+// Función para obtener el color según el país
+function getCountryColor(index: any, isBackground = false) {
+  if(colors.includes(index)){
+    return colors[index];
+  }else{
+    colors[index]=getRandomColor();
+    return colors[index];
+  }
+   // Color por defecto en caso de que el país no esté en el objeto colors
+}
+
+const processDataSet=function (dataset:any, index:number) {
+  let color=getCountryColor(index);
+  return {
+    ...dataset,
+    tension: 0.2,
+    fill: true,
+    borderColor: color, 
+    pointRadius: 1,
+    pointHoverRadius: 8,
+    pointBorderColor: color, 
+    pointBackgroundColor: color, 
+  };
+}
+
 const Chart = () => {
   const [datos, setDatos] = useState<DatoAPI[]>([]);
   const [labels, setLabels] = useState<number[]>([]);
@@ -49,36 +84,8 @@ const Chart = () => {
   const { selectedOption, selectedRegionOption } = useContext(AppContext);
   const data = {
     labels: labels,
-    datasets: datasets.map((dataset, index) => ({
-      ...dataset,
-      tension: 0.2,
-      fill: true,
-      borderColor: getCountryColor(index), // Función para obtener el color del borde según el país
-      pointRadius: 1,
-      pointHoverRadius: 8,
-      pointBorderColor: getCountryColor(index), // Función para obtener el color del borde de los puntos según el país
-      pointBackgroundColor: getCountryColor(index), // Función para obtener el color de fondo de los puntos según el país
-    })),
+    datasets: datasets.map(processDataSet),
   };
-  function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
-
-  // Función para obtener el color según el país
-  function getCountryColor(index: any, isBackground = false) {
-    if(colors.includes(index)){
-      return colors[index];
-    }else{
-      colors[index]=getRandomColor();
-      return colors[index];
-    }
-     // Color por defecto en caso de que el país no esté en el objeto colors
-  }
 
 
   const downloadImage = () => {
