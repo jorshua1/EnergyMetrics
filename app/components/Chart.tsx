@@ -36,7 +36,7 @@ ChartJS.register(
 );
 
 const options = {};
-
+const colors:any=[]
 const Chart = () => {
   const [datos, setDatos] = useState<DatoAPI[]>([]);
   const [labels, setLabels] = useState<number[]>([]);
@@ -60,39 +60,26 @@ const Chart = () => {
       pointBackgroundColor: getCountryColor(index), // Función para obtener el color de fondo de los puntos según el país
     })),
   };
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
   // Función para obtener el color según el país
   function getCountryColor(index: any, isBackground = false) {
-    const colors: any = {
-      0: "#2563eb",
-      1: "#ef4444",
-      2: "#22c55e",
-      3: "#f97316",
-      4: "#d946ef",
-      5: "#0891b2",
-      6: "#6d28d9",
-      7: "#fbbf24",
-      8: "#34d399", // verde
-      9: "#60a5fa", // azul claro
-      10: "#f9a8d4", // rosa
-      11: "#fde68a", // amarillo
-      12: "#a78bfa", // morado
-      13: "#fca5a5", // rojo claro
-      14: "#6ee7b7", // verde claro
-      15: "#93c5fd", // azul cielo
-      16: "#794044", // marrón
-      17: "#6a0573", // púrpura oscuro
-      18: "#b6ba18", // verde oliva
-      19: "#4b5d16", // verde bosque
-      20: "#4b5dce", // azul real
-      21: "#7e1a1a", // granate
-      22: "#2f4f4f", // gris oscuro pizarra
-      23: "#ff4500", // naranja rojo
-      24: "#2e8b57", // verde mar
-      25: "#adff2f", // verde amarillo
-    };
-    return colors[index] || "#000000"; // Color por defecto en caso de que el país no esté en el objeto colors
+    if(colors.includes(index)){
+      return colors[index];
+    }else{
+      colors[index]=getRandomColor();
+      return colors[index];
+    }
+     // Color por defecto en caso de que el país no esté en el objeto colors
   }
+
 
   const downloadImage = () => {
     const input = document.getElementById("chartToDownload");
