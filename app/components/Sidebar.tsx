@@ -66,7 +66,7 @@ const menuItems = [
   },
   {
     path: "/multi-graph",
-    icon: <TbAppsFilled  size={32} />,
+    icon: <TbAppsFilled size={32} />,
     title: "Multi Graph",
   },
 ];
@@ -75,8 +75,9 @@ export default function Sidebar() {
   return (
     <aside
       className={
-        "min-h-screen w-[360px] px-4 bg-slate-300 fixed top-0 border-0 border-red-400"
+        "min-h-screen w-[360px] px-4 bg-slate-300 fixed top-0 border-0 border-red-400 overflow-hidden lg:overflow-y-auto"
       }
+      style={{ maxHeight: "100vh" }}
     >
       <div
         id="logo"
