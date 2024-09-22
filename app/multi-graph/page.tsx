@@ -34,17 +34,11 @@ export default function MultiPage() {
   ];
 
   return (
-    <div className="w-full min-h-screen flex flex-wrap">
-      <div className="w-1/2 h-1/2">
+    <div className="grid grid-cols-1 grid-rows-2 gap-10">
+      <div className="col-span-5 row-span-2">
         <Wraper datos={data}></Wraper>
       </div>
-      <div className="w-1/2 h-1/2">
-        <Wraper datos={data}></Wraper>
-      </div>
-      <div className="w-1/2 h-1/2">
-        <Wraper datos={data}></Wraper>
-      </div>
-      <div className="w-1/2 h-1/2">
+      <div className="col-span-5 row-span-2">
         <Wraper datos={data}></Wraper>
       </div>
     </div>
