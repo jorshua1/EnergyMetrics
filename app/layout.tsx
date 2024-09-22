@@ -78,7 +78,7 @@ export default function RootLayout({
               </button>
 
               <span className="absolute bottom-4 right-4 flex items-end text-slate-900 tracking-tighter text-lg font-bold">
-                Tesis realizada por: Guillermo
+                Tesis realizada por: Guillermo Orozco
               </span>
             </div>
           </div>
