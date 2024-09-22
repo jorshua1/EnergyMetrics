@@ -75,7 +75,7 @@ export default function Sidebar() {
   return (
     <aside
       className={
-        "min-h-screen w-[360px] px-4 bg-slate-300 fixed top-0 border-0 border-red-400 overflow-hidden lg:overflow-y-auto"
+        "min-h-screen w-[360px] px-4 bg-slate-300 fixed top-0 border-0 border-red-400 overflow-hidden md:overflow-y-auto"
       }
       style={{ maxHeight: "100vh" }}
     >
