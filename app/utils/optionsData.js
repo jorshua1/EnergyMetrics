@@ -79,7 +79,7 @@ export const regionData = [
 },
   {
     value: "cis",
-    label: "CIS",
+    label: "Commonwealth of Independent States (CIS)",
     query: [
       "Belarus",
       "RussianFederation",
