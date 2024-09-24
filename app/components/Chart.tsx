@@ -36,6 +36,41 @@ ChartJS.register(
 );
 
 const options = {};
+const colors:any=[]
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+// Función para obtener el color según el país
+function getCountryColor(index: any, isBackground = false) {
+  if(colors.includes(index)){
+    return colors[index];
+  }else{
+    colors[index]=getRandomColor();
+    return colors[index];
+  }
+   // Color por defecto en caso de que el país no esté en el objeto colors
+}
+
+const processDataSet=function (dataset:any, index:number) {
+  let color=getCountryColor(index);
+  return {
+    ...dataset,
+    tension: 0.2,
+    fill: true,
+    borderColor: color, 
+    pointRadius: 1,
+    pointHoverRadius: 8,
+    pointBorderColor: color, 
+    pointBackgroundColor: color, 
+  };
+}
 
 const Chart = () => {
   const [datos, setDatos] = useState<DatoAPI[]>([]);
@@ -49,61 +84,35 @@ const Chart = () => {
   const { selectedOption, selectedRegionOption } = useContext(AppContext);
   const data = {
     labels: labels,
-    datasets: datasets.map((dataset, index) => ({
-      ...dataset,
-      tension: 0.2,
-      fill: true,
-      borderColor: getCountryColor(index), // Función para obtener el color del borde según el país
-      pointRadius: 1,
-      pointHoverRadius: 8,
-      pointBorderColor: getCountryColor(index), // Función para obtener el color del borde de los puntos según el país
-      pointBackgroundColor: getCountryColor(index), // Función para obtener el color de fondo de los puntos según el país
-    })),
+    datasets: datasets.map(processDataSet),
   };
 
-  // Función para obtener el color según el país
-  function getCountryColor(index: any, isBackground = false) {
-    const colors: any = {
-      0: "#2563eb",
-      1: "#ef4444",
-      2: "#22c55e",
-      3: "#f97316",
-      4: "#d946ef",
-      5: "#0891b2",
-      6: "#6d28d9",
-      7: "#fbbf24",
-      8: "#34d399", // verde
-      9: "#60a5fa", // azul claro
-      10: "#f9a8d4", // rosa
-      11: "#fde68a", // amarillo
-      12: "#a78bfa", // morado
-      13: "#fca5a5", // rojo claro
-      14: "#6ee7b7", // verde claro
-      15: "#93c5fd", // azul cielo
-      16: "#794044", // marrón
-      17: "#6a0573", // púrpura oscuro
-      18: "#b6ba18", // verde oliva
-      19: "#4b5d16", // verde bosque
-      20: "#4b5dce", // azul real
-      21: "#7e1a1a", // granate
-      22: "#2f4f4f", // gris oscuro pizarra
-      23: "#ff4500", // naranja rojo
-      24: "#2e8b57", // verde mar
-      25: "#adff2f", // verde amarillo
-    };
-    return colors[index] || "#000000"; // Color por defecto en caso de que el país no esté en el objeto colors
-  }
 
   const downloadImage = () => {
     const input = document.getElementById("chartToDownload");
     html2canvas(input!).then((canvas) => {
+      const ctx = canvas.getContext("2d");
+      if (ctx) {
+        // Set watermark text properties
+        ctx.font = "50px Arial";
+        ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+
+        // Position the watermark text
+        const text = "Energy Metrics - Guillermo Orozco";
+        const x = 870;
+        const y = 220;
+
+        // Draw the watermark text
+        ctx.fillText(text, x, y);
+      }
       // Use optional chaining to ensure input is not null
-      const imgData = canvas.toDataURL("image/png");
+      const imgData = canvas.toDataURL("image/jpeg");
       const link = document.createElement("a");
       link.href = imgData;
-      link.download = `${
-        selectedOption !== null ? selectedOption.label : "Grafica sin datos"
-      }`;
+      link.download = `${selectedOption !== null ? selectedOption.label : "Grafica sin datos"
+        }.jpg`;
       link.click();
     });
   };
@@ -177,7 +186,7 @@ const Chart = () => {
     }
   }, [datos]);
   return (
-    <div className="w-11/12 px-5 h-full flex flex-col" id="chartToDownload">
+    <div className="w-11/12 px-5 h-full flex flex-col" >
       <div className="flex justify-between">
         <span className="text-2xl font-bold tracking-tighter text-slate-600 py-5">
           {selectedOption !== null
@@ -195,7 +204,7 @@ const Chart = () => {
           <TbDownload size={"24px"} className="text-slate-700" />
         </button>
       </div>
-      <div>
+      <div id="chartToDownload">
         <Line data={data} options={options} />
       </div>
     </div>

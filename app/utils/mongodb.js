@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = `${process.env.MONGODB_URI}/${process.env.DB_NAME}`;
+const pass = encodeURIComponent("admin#2024%");
+const MONGODB_URI = "mongodb+srv://admin:"+pass+"@guillecluster.hexaw9o.mongodb.net/energy_metrics?retryWrites=true&w=majority&appName=GuilleCluster";
 
 if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable inside .env.local');

@@ -23,14 +23,4 @@ export async function GET(request: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
-
-export function POST(req: NextApiRequest, { params }: any) {
-  return NextResponse.json({ mensaje: ` "POST" ` })
-}
-export function PUT(req: NextApiRequest, { params }: any) {
-  return NextResponse.json({ mensaje: ` "PUT" ` })
-}
-export function DELETE(req: NextApiRequest, { params }: any) {
-  return NextResponse.json({ mensaje: ` "DELETE" ` })
-}
-// 
+ 
