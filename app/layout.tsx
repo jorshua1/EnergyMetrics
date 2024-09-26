@@ -86,10 +86,10 @@ export default function RootLayout({
 
               {/* Descripción */}
               <p
-                className=" text-white text-lg md:text-2xl font-light tracking-tighter w-2/3 md:p-3 rounded-2xl"
+                className="text-white text-lg md:text-2xl font-light tracking-tighter w-2/3 md:p-3 rounded-2xl"
                 style={{ margin: 0 }}
               >
-                Shaping Tomorrow's Energy Landscape, TODAY
+                Shaping Tomorrow&apos;s Energy Landscape, TODAY
               </p>
 
               {/* Botón de Acción */}
